@@ -11,13 +11,13 @@ jobs:
 
     # 下载源码
     - name: Checkout
-      uses: actions/checkout@master
+      uses: actions/checkout@v3
 
     # 打包构建
     - name: Build
-      uses: actions/setup-node@master
+      uses: actions/setup-node@v3
       with: 
-        node-version: '12.x'
+        node-version: 16
     - run: npm install
     - run: npm run build
     - run: tar -zcvf release.tgz .nuxt static nuxt.config.js package.json package-lock.json pm2.config.json
